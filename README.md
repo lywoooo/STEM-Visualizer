@@ -58,7 +58,7 @@ Color meanings in the visualizer:
 - Center panel: see the live bar graph and array view
 - Right panel: read the explanation, target value, and reference code
 
-## Why This Project Stands Out
+## Project Highlights
 
 - It uses one consistent visual system across both sorting and searching algorithms, so students can focus on strategy instead of relearning the interface.
 - Every algorithm is shown in two synchronized forms: animated bars for intuition and a large indexed array for exact reasoning.
