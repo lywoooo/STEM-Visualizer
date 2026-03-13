@@ -15,7 +15,13 @@ The goal is simple: make algorithm behavior easier to teach and easier to unders
 
 ### Merge Sort Demo
 
-<video src="./docs/media/merge-sort.mov" controls muted loop playsinline width="100%"></video>
+GitHub-style README rendering does not reliably play a repo-local video embed here.
+
+[Download or open the Merge Sort demo video](./docs/media/merge-sort.mov)
+
+Preview image:
+
+![Merge Sort demo preview](./docs/media/home-full.png)
 
 ## Features
 
