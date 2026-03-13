@@ -11,17 +11,7 @@ The goal is simple: make algorithm behavior easier to teach and easier to unders
 
 ### Website
 
-![STEM Visualizer home screen](./docs/media/home-full.png)
-
-### Merge Sort Demo
-
-GitHub-style README rendering does not reliably play a repo-local video embed here.
-
-[Download or open the Merge Sort demo video](./docs/media/merge-sort.mov)
-
-Preview image:
-
-![Merge Sort demo preview](./docs/media/home-full.png)
+![STEM Visualizer home screen](./docs/media/website-full.png)
 
 ## Features
 
