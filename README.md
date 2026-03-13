@@ -58,33 +58,13 @@ Color meanings in the visualizer:
 - Center panel: see the live bar graph and array view
 - Right panel: read the explanation, target value, and reference code
 
-## Run Locally
+## Why This Project Stands Out
 
-```bash
-npm install
-npm run dev
-```
-
-## Production Build
-
-```bash
-npm run build
-```
-
-## Project Structure
-
-```text
-src/App.tsx
-src/App.css
-src/index.css
-docs/media/
-```
-
-## Why This Project Is Useful
-
-Many visualizers either hide the underlying array too much or focus too much on raw code. This project keeps both in view at the same time, which makes it better for:
-
-- classroom walkthroughs
-- AP CSA review
-- comparing sorting strategies
-- understanding how searching differs from sorting
+- It uses one consistent visual system across both sorting and searching algorithms, so students can focus on strategy instead of relearning the interface.
+- Every algorithm is shown in two synchronized forms: animated bars for intuition and a large indexed array for exact reasoning.
+- The visualization is built from explicit trace frames such as compare, swap, found, and done, which makes each step teachable instead of decorative.
+- It goes beyond basic AP CSA coverage by including advanced algorithms like Merge Sort, Quick Sort, and Heap Sort in the same learning environment.
+- Search algorithms are handled differently where needed, including sorted preparation for Binary Search and target-focused tracing.
+- The app is designed for instruction, not just animation, with explanation text, teaching notes, and readable pseudocode beside each algorithm.
+- The bar motion is stateful and smooth because values keep stable identities as they move through the array.
+- The project stays lightweight and readable despite the algorithm coverage, using a small React and Vite codebase instead of a large visualization framework.
