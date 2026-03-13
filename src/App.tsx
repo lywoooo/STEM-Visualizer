@@ -30,6 +30,19 @@ type AlgorithmOption = {
   buildTrace: (seed: Term[], target: number) => TraceFrame[]
 }
 
+function getInitialConfig() {
+  const params = new URLSearchParams(window.location.search)
+  const algorithm = params.get('algorithm') as AlgorithmKey | null
+  const speed = Number(params.get('speed'))
+  const autoplay = params.get('autoplay') === '1'
+
+  return {
+    algorithmKey: algorithm,
+    speedMs: Number.isFinite(speed) && speed > 0 ? speed : 500,
+    autoplay,
+  }
+}
+
 function cloneTerms(terms: Term[]): Term[] {
   return terms.map((term) => ({ ...term }))
 }
@@ -656,11 +669,12 @@ return -1;`,
 ]
 
 function App() {
-  const [algorithmKey, setAlgorithmKey] = useState<AlgorithmKey>('bubble')
+  const initialConfig = useMemo(() => getInitialConfig(), [])
+  const [algorithmKey, setAlgorithmKey] = useState<AlgorithmKey>(initialConfig.algorithmKey ?? 'bubble')
   const [baseSeed, setBaseSeed] = useState<Term[]>(() => randomTerms(TERM_COUNT))
   const [frameIndex, setFrameIndex] = useState(0)
-  const [playing, setPlaying] = useState(false)
-  const [speedMs, setSpeedMs] = useState(500)
+  const [playing, setPlaying] = useState(initialConfig.autoplay)
+  const [speedMs, setSpeedMs] = useState(initialConfig.speedMs)
 
   const algorithm = useMemo(
     () => ALGORITHMS.find((item) => item.key === algorithmKey) ?? ALGORITHMS[0],
@@ -683,11 +697,6 @@ function App() {
   const frame = frames[frameIndex] ?? frames[frames.length - 1]
 
   useEffect(() => {
-    setFrameIndex(0)
-    setPlaying(false)
-  }, [algorithmKey, baseSeed])
-
-  useEffect(() => {
     if (!playing) return
 
     const id = window.setInterval(() => {
@@ -704,7 +713,11 @@ function App() {
     return () => window.clearInterval(id)
   }, [frames.length, playing, speedMs])
 
-  const newData = () => setBaseSeed(randomTerms(TERM_COUNT))
+  const newData = () => {
+    setBaseSeed(randomTerms(TERM_COUNT))
+    setFrameIndex(0)
+    setPlaying(false)
+  }
   const reset = () => {
     setFrameIndex(0)
     setPlaying(false)
@@ -737,7 +750,11 @@ function App() {
               key={item.key}
               type="button"
               className={`sidebar-item ${item.key === algorithmKey ? 'active' : ''}`}
-              onClick={() => setAlgorithmKey(item.key)}
+              onClick={() => {
+                setAlgorithmKey(item.key)
+                setFrameIndex(0)
+                setPlaying(false)
+              }}
             >
               {item.label}
             </button>
@@ -748,7 +765,11 @@ function App() {
               key={item.key}
               type="button"
               className={`sidebar-item ${item.key === algorithmKey ? 'active' : ''}`}
-              onClick={() => setAlgorithmKey(item.key)}
+              onClick={() => {
+                setAlgorithmKey(item.key)
+                setFrameIndex(0)
+                setPlaying(false)
+              }}
             >
               {item.label}
             </button>

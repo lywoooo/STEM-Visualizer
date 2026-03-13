@@ -1,0 +1,61 @@
+<svg width="960" height="320" viewBox="0 0 960 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="320" fill="#171A1F"/>
+  <text x="28" y="42" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="24" font-weight="700">Bubble Sort Demo</text>
+  <text x="28" y="68" fill="#9CA3AF" font-family="Arial, sans-serif" font-size="14">Adjacent comparisons and swaps push larger values to the right.</text>
+
+  <g transform="translate(40 92)">
+    <line x1="0" y1="190" x2="880" y2="190" stroke="#374151" stroke-width="2"/>
+
+    <g>
+      <rect x="0" y="70" width="90" height="120" rx="8" fill="#6B7280">
+        <animate attributeName="fill" values="#FACC15;#FACC15;#6B7280;#6B7280" dur="6s" repeatCount="indefinite"/>
+      </rect>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 0;100 0;100 0" dur="6s" repeatCount="indefinite"/>
+      <text x="45" y="210" text-anchor="middle" fill="#D1D5DB" font-family="monospace" font-size="14">42</text>
+    </g>
+
+    <g>
+      <rect x="100" y="120" width="90" height="70" rx="8" fill="#60A5FA">
+        <animate attributeName="fill" values="#60A5FA;#60A5FA;#F87171;#6B7280;#6B7280" dur="6s" repeatCount="indefinite"/>
+      </rect>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 0;-100 0;-100 0" dur="6s" repeatCount="indefinite"/>
+      <text x="145" y="210" text-anchor="middle" fill="#D1D5DB" font-family="monospace" font-size="14">21</text>
+    </g>
+
+    <g>
+      <rect x="220" y="35" width="90" height="155" rx="8" fill="#6B7280">
+        <animate attributeName="fill" values="#6B7280;#6B7280;#6B7280;#FACC15;#FACC15;#6B7280" dur="6s" repeatCount="indefinite"/>
+      </rect>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 0;100 0;100 0" dur="6s" repeatCount="indefinite"/>
+      <text x="265" y="210" text-anchor="middle" fill="#D1D5DB" font-family="monospace" font-size="14">53</text>
+    </g>
+
+    <g>
+      <rect x="320" y="90" width="90" height="100" rx="8" fill="#6B7280">
+        <animate attributeName="fill" values="#6B7280;#6B7280;#6B7280;#60A5FA;#60A5FA;#F87171" dur="6s" repeatCount="indefinite"/>
+      </rect>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 0;-100 0;-100 0" dur="6s" repeatCount="indefinite"/>
+      <text x="365" y="210" text-anchor="middle" fill="#D1D5DB" font-family="monospace" font-size="14">34</text>
+    </g>
+
+    <g>
+      <rect x="440" y="130" width="90" height="60" rx="8" fill="#6B7280"/>
+      <text x="485" y="210" text-anchor="middle" fill="#D1D5DB" font-family="monospace" font-size="14">18</text>
+    </g>
+
+    <g>
+      <rect x="560" y="10" width="90" height="180" rx="8" fill="#6B7280"/>
+      <text x="605" y="210" text-anchor="middle" fill="#D1D5DB" font-family="monospace" font-size="14">60</text>
+    </g>
+  </g>
+
+  <g transform="translate(700 36)">
+    <rect width="230" height="84" rx="10" fill="#1F2430" stroke="#374151"/>
+    <rect x="14" y="14" width="14" height="14" fill="#FACC15"/>
+    <text x="40" y="26" fill="#D1D5DB" font-family="Arial, sans-serif" font-size="13">Current pointer</text>
+    <rect x="14" y="38" width="14" height="14" fill="#60A5FA"/>
+    <text x="40" y="50" fill="#D1D5DB" font-family="Arial, sans-serif" font-size="13">Compare bar</text>
+    <rect x="14" y="62" width="14" height="14" fill="#F87171"/>
+    <text x="40" y="74" fill="#D1D5DB" font-family="Arial, sans-serif" font-size="13">Swapped bars</text>
+  </g>
+</svg>
